@@ -199,10 +199,10 @@ header.scrolled {
 .navbar__link {
   color: white;
   text-decoration: none;
-  padding: 0.5rem;
+  padding: 8px 15px;
   position: relative;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .navbar__link::after {
@@ -533,7 +533,6 @@ main {
   }
 }
 
-/* ตัวอย่างต่อจาก CSS รีแฟกก่อนหน้านี้ */
 .projects-section {
   padding: 5rem 10%;
   color: var(--text-color);
@@ -574,7 +573,7 @@ main {
 
 .project-cards {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2rem;
 }
 
@@ -620,57 +619,108 @@ main {
 
 .project-links {
   display: flex;
-  justify-content: center;
-  border: none;
-  border-radius: 35px;
-  background-color: #ccc;
-  width: 120px;
-  height: 35px;
-  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .project-links a {
   text-decoration: none;
-  list-style: none;
-  color: black;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  background-color: #24292e;
 }
 
 .project-links a:hover {
-  color: #000;
+  color: white;
+  background-color: black;
 }
 
-.project-links:hover {
-  background-color: #656565;
+.btn-link.github {
+  background-color: #24292e;
+  color: white;
+}
+
+/* -------------------------------------------------- */
+/* Project Links & Buttons Styles                     */
+/* -------------------------------------------------- */
+
+.btn-link.github {
+  background-color: #24292e;
+  color: white;
+}
+.btn-link.github:hover {
+  background-color: #000;
+}
+
+/* See More style */
+.btn-link.details {
+  background-color: #7c3aed;
+  color: white;
+}
+.btn-link.details:hover {
+  background-color: #5b21b6;
+}
+
+@media (max-width: 600px) {
+  .project-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* Modal */
-/* ===== 🌙 MODAL OVERLAY ===== */
+
 .modal {
-  display: none; /* default: ซ่อน */
+  display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 1000;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
   animation: fadeIn 0.3s ease;
+  -webkit-backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
 }
 
-/* ===== 📦 MODAL CONTENT ===== */
 .modal-content {
-  background-color: #1a1a1a;
-  margin: 5% auto;
-  padding: 2rem;
+  background-color: rgb(26, 26, 26);
+  max-width: 800px;
+  width: 80%;
+  color: white;
+  max-height: 90vh; /* <<< สูงสุดแค่ 90% จอ */
+  overflow-y: auto; /* <<< ให้ scroll ข้างใน */
+  margin: auto;
+  padding: 30px;
   border-radius: 1rem;
-  max-width: 600px;
-  color: #fff;
   position: relative;
   animation: slideUp 0.3s ease;
-  max-height: 80vh;
-  overflow-y: auto;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .modal-content::-webkit-scrollbar {
@@ -690,12 +740,12 @@ main {
   background: #a86dff;
 }
 
-/* ===== ❌ CLOSE BUTTON ===== */
 .modal-close {
+  float: right;
   position: absolute;
   top: 1rem;
   right: 1.2rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #aaa;
   cursor: pointer;
   transition: color 0.2s ease;
@@ -705,7 +755,6 @@ main {
   color: #fff;
 }
 
-/* ===== 📝 MODAL CONTENT STYLES ===== */
 .modal-content h2 {
   margin-bottom: 1rem;
   font-size: 1.8rem;
@@ -747,7 +796,6 @@ main {
   transform: scale(1.02);
 }
 
-/* ===== ✨ ANIMATIONS ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -757,20 +805,9 @@ main {
   }
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* ===== 📱 RESPONSIVE ===== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .modal-content {
+    width: 95%;
     margin: 10% 1rem;
     padding: 1.5rem;
   }

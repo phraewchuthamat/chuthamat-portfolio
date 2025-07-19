@@ -1,27 +1,32 @@
 // script.js
+// Function to update the active class in the navbar based on scroll position
+function updateNavbarActiveLink() {
+  const sections = document.querySelectorAll("section[id], .content[id]"); // Select all sections with an ID and the 'content' div
+  const navLinks = document.querySelectorAll(".navbar__link"); // Select all navbar links
 
-const sections = document.querySelectorAll("section, .content");
-const navLinks = document.querySelectorAll("nav ul li a");
-const navbar = document.querySelector(".navbar");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
+  let currentActive = "home";
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 10;
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
 
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute("id");
+    if (
+      window.scrollY >= sectionTop - 100 &&
+      window.scrollY < sectionTop + sectionHeight - 100
+    ) {
+      currentActive = section.id;
     }
   });
 
   navLinks.forEach((link) => {
     link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
+    if (link.getAttribute("href").substring(1) === currentActive) {
       link.classList.add("active");
     }
   });
-});
+}
+
+window.addEventListener("scroll", updateNavbarActiveLink);
+window.addEventListener("load", updateNavbarActiveLink);
 
 window.addEventListener("scroll", () => {
   const sections = document.querySelectorAll("section");
