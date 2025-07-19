@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/favicon.ico">
+    <meta name="description" content="Frontend Developer Portfolio of Chuthamat Buaban.">
+    <meta name="keywords" content="Frontend, React, Portfolio, Developer, HTML, CSS, JavaScript">
+    <meta name="author" content="Chuthamat Buaban">
+
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <spline-viewer class="background-3d-viewer"
+        url="https://prod.spline.design/ypElfVqtuSagBLgt/scene.splinecode"></spline-viewer>
+
+    <div class="main-content-wrapper">
+        <img class="image-gradient" src="image/gradient.png" alt="gradient">
+        <div class="layer-blur"></div>
+        <!-- Navbar -->
+        <div class="container">
+            <header class="navbar">
+                <div class="navbar__brand">
+                    <i class="fa-solid fa-bolt icon-nav"></i>
+                    <span>MyPortfolio</span>
+                </div>
+
+                <nav class="navbar__menu">
+                    <ul class="navbar__list">
+                        <li><a href="#home" class="navbar__link active">Home</a></li>
+                        <li><a href="#about" class="navbar__link">About</a></li>
+                        <li><a href="#projects" class="navbar__link">Projects</a></li>
+                        <li><a href="#experience" class="navbar__link">Experience</a></li>
+                        <li><a href="#contact" class="navbar__link">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="home" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                    <h1>Welcome to My Developer<br>Portfolio.</h1>
+                    <p class="description">Passionate Frontend Developer with real-world experience.</p>
+                    <div class="buttons">
+                        <a href="#about" class="btn-getStart">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Profile name -->
+                <section class="section-profile" data-aos="fade-right">
+                    <div class="intro">
+                        <img src="image/person.png" alt="profiles" class="circle-img">
+                        <div class="info">
+                            <h1>Chuthamat Buaban</h1>
+                            <h3 class="job-title">Frontend Developer</h3>
+                            <p class="profile-description">A fresh graduate with experience in building responsive web
+                                applications.</p>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="https://drive.google.com/drive/folders/1umQPwMVB-7alSbpGctTjwim7lKygrdIx?usp=sharing"
+                            class="btn-link" target="_blank" rel="noopener noreferrer">
+                            Awards / Activities
+                        </a>
+                        <a href="resume/Resume.pdf" download target="_blank" type="application/pdf" class="btn-resume">
+                            Download Resume
+                        </a>
+                    </div>
+                </section>
+                <!-- About me -->
+                <section id="about" class="section-about" data-aos="fade-up">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto text-center">
+                                <p class="lead">
+                                    A highly motivated Electrical and Electronics Engineering graduate with a
+                                    strong
+                                    foundation in logical problem-solving and system analysis. Driven by a passion for
+                                    digital
+                                    innovation, I transitioned into Frontend development through hands-on projects,
+                                    excelling in
+                                    creating intuitive web interfaces using React.js and JavaScript. Eager to apply my
+                                    engineering
+                                    mindset and strong self-learning ability to a junior Frontend Developer role,
+                                    contributing to
+                                    innovative solutions and continuous growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Project  -->
+                <section class="projects-section" id="projects" data-aos="fade-up" data-aos-duration="3000">
+                    <h1 class="projects-title">My Projects</h1>
+                    <p class="projects-subtitle">Here are some of the projects I've worked on:</p>
+
+                    <!-- See More Button -->
+                    <div class="projects-button-wrapper">
+                        <a href="#" class="btn btn-see-more" id="openModalBtn">See More</a>
+                    </div>
+
+                    <!-- Modal Popup -->
+                    <div class="modal" id="modal">
+                        <div class="modal-content">
+                            <span class="modal-close" id="closeModalBtn">&times;</span>
+                            <h2>Project 1 : Smart Building Energy Monitor</h2>
+                            <p>การพัฒนาระบบวิเคราะห์ ประมวลผล และแสดงผลข้อมูล
+                                ในอาคารอัจฉริยะ สำหรับการบริหารจัดการพลังงานอย่างมีประสิทธิภาพ โดยใช้เทคโนโลยี IoT
+                                และปัญญาประดิษฐ์</p>
+                            <ul class="modal-project-list">
+                                <li><img src="image/ProjectEE2024.jpg" alt="systemOverivew"></li>
+                                <li>Mobile App UI (Figma → React Native)
+                                    <img src="image/imageWebApp.png" alt="website">
+                                </li>
+                                <li>📊 Dashboard IoT Sensor → Recharts</li>
+                                <li>พัฒนาและออกแบบระบบ IoT (Internet of Things)
+                                    สำหรับการนำส่งข้อมูลเพื่อใช้เป็นตัวกลางสำหรับรับส่งข้อมูลจากเซ็นเซอร์</li>
+                                <li>พัฒนาและออกแบบระบบคุมคุมและแสดงผลผ่าน website application
+                                    เพื่อสนับสนุนการบริหารจัดการพลังงาน</li>
+                        </div>
+                    </div>
+
+                    <script>const openModalBtn = document.getElementById("openModalBtn");
+                        const closeModalBtn = document.getElementById("closeModalBtn");
+                        const modal = document.getElementById("modal");
+
+                        openModalBtn.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            modal.style.display = "flex"; // เพราะเราใช้ flex center modal
+                        });
+
+                        closeModalBtn.addEventListener("click", () => {
+                            modal.style.display = "none";
+                        });
+
+                        window.addEventListener("click", (e) => {
+                            if (e.target === modal) {
+                                modal.style.display = "none";
+                            }
+                        });
+                    </script>
+
+                    <!-- Projects List -->
+                    <div class="project-cards">
+                        <!-- Project 1 -->
+                        <div class="project-card">
+                            <img src="image/ProjectEE2024.jpg" alt="Smart Building Project" class="project-image" />
+                            <div class="project-details">
+                                <h2 class="project-title">Smart Building Energy Monitor</h2>
+                                <p class="project-description">ระบบเก็บ วิเคราะห์ แสดงผลพลังงานในอาคารด้วย IoT และ AI
+                                </p>
+                                <div class="project-tags">
+                                    <span>React.js</span><span>Node.js</span><span>NoSQL</span><span>API</span><span>Deepseek
+                                        AI</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Toppuwittaya/Fontend-energy" target="_blank">Github</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-card">
+                            <img src="image/person.png" alt="Portfolio Website" class="project-image" />
+                            <div class="project-details">
+                                <h2 class="project-title">Portfolio Website</h2>
+                                <p class="project-description">Designed using HTML, CSS, JavaScript</p>
+                                <div class="project-tags">
+                                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- My Experience -->
+                <section>
+                    <div id="experience" class="container-experience" data-aos="fade-up" data-aos-duration="3000">
+                        <div class="description-experience">
+                            <h1>Work Experience</h1>
+                            <p>I have worked on two real-world freelance projects that strengthened my frontend skills.
+                            </p>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>Frontend Developer <span>(Freelance)</span></h3>
+                                    <span class="timeline-date">Mar 2023 - Present</span>
+                                    <p>Improved UI/UX for an internal company product, implementing reusable React
+                                        components and
+                                        enhancing overall responsiveness.</p>
+                                    <div class="tools">
+                                        <span>React</span>
+                                        <span>JavaScript</span>
+                                        <span>MUI</span>
+                                        <span>Chart.js</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>E-Budget School <span>(Frontend Developer - Freelance)</span></h3>
+                                    <span class="timeline-date">2023 - Present</span>
+                                    <p>Developed a budgeting dashboard for school finance with interactive UI and
+                                        dynamic
+                                        data
+                                        visualization.</p>
+                                    <div class="tools">
+                                        <span>React</span>
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                        <span>Figma</span>
+                                        <span>MUI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-skills" data-aos="fade-left">
+                        <h1>My Skills</h1>
+                        <p>A summary of my technical skills.</p>
+                        <div class="skills-grid">
+                            <div class="skill-box">
+                                <i class="fab fa-js-square"></i>
+                                <div>
+                                    <h3>JavaScript</h3>
+                                    <p>Proficient - 1+ year</p>
+                                </div>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fab fa-html5"></i>
+                                <div>
+                                    <h3>HTML</h3>
+                                    <p>1+ year</p>
+                                </div>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fab fa-css3-alt"></i>
+                                <div>
+                                    <h3>CSS</h3>
+                                    <p>1+ year</p>
+                                </div>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fab fa-react"></i>
+                                <div>
+                                    <h3>React</h3>
+                                    <p>1+ year</p>
+                                </div>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fab fa-git-alt"></i>
+                                <div>
+                                    <h3>Git</h3>
+                                    <p>6 months</p>
+                                </div>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fab fa-github"></i>
+                                <div>
+                                    <h3>GitHub</h3>
+                                    <p>6 months</p>
+                                </div>
+                            </div>
+                            <div class="skill-box">
+                                <img src="https://cdn.worldvectorlogo.com/logos/postman.svg" alt="Postman logo"
+                                    class="icon-postman">
+                                <div>
+                                    <h3>Postman</h3>
+                                    <p>1 year</p>
+                                </div>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fa-brands fa-figma"></i>
+                                <div>
+                                    <h3>Figma</h3>
+                                    <p>6 months</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="contact">
+                    <div class="contact-container">
+                        <div class="content-contact">
+                            <h1>Get In Touch</h1>
+                            <p>Feel free to reach out for collaborations or inquiries.</p>
+                        </div>
+                        <div class="content-contact-form">
+                            <form action="https://formspree.io/f/xrblbnpa" method="POST">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" placeholder="Your Name"><br>
+
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"><br>
+
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message"
+                                    placeholder="Type your message here..."></textarea><br>
+
+                                <div class="form-buttons">
+                                    <button type="reset">Reset</button>
+                                    <button type="submit" id="submit">Send Message</button>
+                                </div>
+
+                                <script>
+                                    let submit = document.getElementById("submit")
+                                    submit.addEventListener("click", function () {
+                                        alert("Successfully")
+                                    })
+                                </script>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p>© 2024 Chuthamat Buaban - All Rights Reserved</p>
+                <p>Follow me on social media!</p>
+                <div class="social-links">
+                    <a href="https://github.com/phraewchuthamat" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/chuthamatdev" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <p><a href="privacy-policy.html">Privacy Policy</a></p>
+            </footer>
+        </div>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.33/build/spline-viewer.js"></script>
+    </div>
+</body>
+
+</html>
