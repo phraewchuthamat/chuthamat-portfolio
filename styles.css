@@ -403,16 +403,18 @@ main {
 @media (max-width: 768px) {
   .section-about {
     padding: 1rem 0 0 0;
-    margin-top: 2rem;
+    margin-top: 8rem;
     flex-direction: column;
     text-align: center;
   }
   .section-title {
     font-size: 2rem;
+    margin-top: 2rem;
   }
 
   .lead {
     font-size: 1rem;
+    margin-top: 2rem;
   }
 }
 
