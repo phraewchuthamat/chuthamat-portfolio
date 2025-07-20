@@ -39,7 +39,7 @@ html {
 @media (max-width: 768px) {
   .box-project-1,
   .box-project-2 {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .image-process-project {
@@ -180,6 +180,18 @@ header.scrolled {
   font-size: 1.8rem;
   color: #b084ff;
   text-shadow: 0 0 10px rgba(176, 132, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .navbar__brand {
+    font-size: 1.1rem;
+    gap: 0.3rem;
+    margin-left: 2%;
+  }
+  .icon-nav {
+    font-size: 1.2rem;
+    margin-right: 0.2rem;
+  }
 }
 
 /* ===== Menu ===== */
@@ -690,20 +702,20 @@ main {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .project-cards {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
   }
   .project-card {
     flex-direction: column;
-    padding: 0.7rem 0.2rem;
+    padding: 1rem;
     align-items: flex-start;
   }
   .project-image {
     width: 100%;
     height: auto;
-    max-height: 120px;
+    max-height: 160px;
     object-fit: cover;
     border-radius: 8px;
   }
@@ -816,7 +828,7 @@ main {
 
 .modal-content {
   background-color: rgb(26, 26, 26);
-  max-width: 800px;
+  max-width: 700px;
   width: 80%;
   color: white;
   max-height: 90vh; /* <<< สูงสุดแค่ 90% จอ */
@@ -923,13 +935,53 @@ main {
 
 @media (max-width: 768px) {
   .modal-content {
-    width: 95%;
+    width: 80%;
     margin: 10% 1rem;
     padding: 1.5rem;
   }
 
   .modal-content h2 {
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-experience {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .description-experience {
+    width: 100%;
+  }
+
+  .description-experience h1 {
+    font-size: 2rem;
+  }
+
+  .timeline {
+    padding-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    left: -7px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-date {
+    font-size: 0.8rem;
+  }
+
+  .timeline-content .tools span {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
   }
 }
 
@@ -1006,12 +1058,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  justify-content: center;
-  max-width: 800px;
-  align-items: center;
-  color: #333;
-  padding: 1rem 3rem;
-  margin: 0 auto;
+  padding: 2rem;
 }
 
 .skill-box {
@@ -1019,7 +1066,7 @@ main {
   align-items: center;
   gap: 1rem;
   text-align: left;
-  background-color: #f9f9f9;
+  background-color: #1e1e1e;
   padding: 1rem;
   border-radius: 0.75rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -1027,7 +1074,6 @@ main {
 
 .skill-box i {
   font-size: 2rem;
-  color: #333;
   min-width: 2rem;
 }
 
@@ -1039,7 +1085,7 @@ main {
 .skill-box p {
   margin: 0;
   font-size: 0.9rem;
-  color: #666;
+  color: #aaa;
 }
 
 .icon-postman,
@@ -1050,7 +1096,33 @@ main {
 
 @media (max-width: 768px) {
   .skills-grid {
-    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .skill-box {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .skill-box i,
+  .skill-box img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .skill-box h3 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .skill-box p {
+    font-size: 0.8rem;
+    color: #bbb;
+    margin-top: 0.25rem;
   }
 }
 
