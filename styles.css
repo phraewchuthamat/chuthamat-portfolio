@@ -66,23 +66,29 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
   z-index: 0;
+  pointer-events: none;
+  filter: blur(80px);
 }
 
 .layer-blur {
-  height: 0;
-  width: 30rem;
-  max-width: 100vw;
-  overflow: hidden;
   position: absolute;
   top: 20%;
   right: 0;
-  box-shadow: 0 0 700px 15px white;
-  rotate: -30deg;
+  width: 30rem;
+  max-width: 100vw;
+  height: 30rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 700px 15px #7c3aedaa;
+  border-radius: 50%;
+  transform: rotate(-30deg);
+  filter: blur(100px);
   z-index: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(2px);
+  pointer-events: none;
 }
 
 .container {
@@ -348,10 +354,10 @@ main {
 }
 
 .circle-img {
-  width: 150px;
+  width: 200px;
+  height: auto;
   border-radius: 50%;
-  border: 4px solid #7f42a7;
-  box-shadow: 0 0 15px #7f42a7;
+  border: 6px solid #7f42a7;
 }
 
 .section-about {
@@ -465,7 +471,6 @@ main {
   margin-top: 3rem;
   padding: 10rem;
   gap: 2rem;
-  backdrop-filter: blur(5px);
   flex-direction: row;
 }
 
@@ -485,13 +490,15 @@ main {
 
 .job-title {
   display: inline-block;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 1.2rem;
   margin-top: 0.5rem;
-  background-color: rgba(127, 66, 167, 0.596);
-  color: white;
-  font-weight: 500;
+  background: linear-gradient(to right, #7c3aed, #a855f7);
+  color: #fff;
+  font-weight: 600;
   font-size: 1rem;
-  border-radius: 6px;
+  border-radius: 999px;
+  box-shadow: 0 2px 10px rgba(124, 58, 237, 0.3);
+  letter-spacing: 0.5px;
 }
 
 .profile-description {
@@ -756,7 +763,7 @@ main,
 }
 
 .project-image {
-  width: auto;
+  width: 100%;
   height: 180px;
   border-radius: var(--radius-lg);
 }
@@ -1016,7 +1023,7 @@ main,
 
 .experience-card {
   /* background: rgba(255, 255, 255, 0.05);*/
-  padding: 1.5rem 2rem;
+  padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
   background-color: #1a1a1a;
@@ -1061,9 +1068,9 @@ main,
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
-  object-fit: cover; /* ป้องกันบิดเบี้ยวเวลามีการตั้ง height */
+  object-fit: cover;
   margin-bottom: 1rem;
-  max-height: 200px; /* ปรับขนาดภาพให้ไม่สูงเกิน */
+  max-height: 200px;
 }
 
 .experience-summary {
@@ -1108,6 +1115,15 @@ main,
 
   .experience-summary h2 {
     font-size: 1.5rem;
+  }
+
+  .experience-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    max-height: 200px;
   }
 }
 
