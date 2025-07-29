@@ -1057,6 +1057,15 @@ main,
   border-radius: 6px;
 }
 
+.experience-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  object-fit: cover; /* ป้องกันบิดเบี้ยวเวลามีการตั้ง height */
+  margin-bottom: 1rem;
+  max-height: 200px; /* ปรับขนาดภาพให้ไม่สูงเกิน */
+}
+
 .experience-summary {
   margin-top: 4rem;
   padding: 2rem;
@@ -1137,11 +1146,7 @@ main,
 }
 
 .skill-card {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.7),
-    rgba(136, 58, 162, 0.526)
-  );
+  background-color: #1a1a1a;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1205,15 +1210,11 @@ main,
 }
 
 .soft-skills-section {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.7),
-    rgba(136, 58, 162, 0.526)
-  );
+  background-color: #1a1a1a;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  max-width: 800px;
+  max-width: 770px;
   margin: 3rem auto;
   padding: 2rem;
   border-radius: 1rem;
