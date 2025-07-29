@@ -18,12 +18,16 @@
 </head>
 
 <body>
-    <spline-viewer class="background-3d-viewer"
-        url="https://prod.spline.design/ypElfVqtuSagBLgt/scene.splinecode"></spline-viewer>
-
     <div class="main-content-wrapper">
         <img class="image-gradient" src="image/gradient.png" alt="gradient">
         <div class="layer-blur"></div>
+        <div class="bg-blur-layers">
+            <div class="blur-spot spot1"></div>
+            <div class="blur-spot spot2"></div>
+            <div class="blur-spot spot3"></div>
+            <div class="blur-spot spot4"></div>
+        </div>
+
         <!-- Navbar -->
         <div class="container">
             <header class="navbar">
@@ -372,7 +376,6 @@
         <script>
             AOS.init();
         </script>
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.33/build/spline-viewer.js"></script>
     </div>
 </body>
 
