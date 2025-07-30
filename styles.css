@@ -703,7 +703,7 @@ main,
 .projects-section {
   padding: 5rem 10%;
   color: var(--text-color);
-  background-color: var(--bg-dark);
+  background-color: transparent;
 }
 
 .projects-title {
@@ -749,18 +749,86 @@ main,
 .project-card {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background-color: #1a1a1a;
   border-radius: 12px;
-  transition: transform 0.3s ease;
+  overflow: hidden;
   width: 20rem;
-  height: auto;
-  box-sizing: border-box;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0; /* ไม่มีมุมมน */
+}
+
+.project-details {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.project-tags span {
+  background-color: #333;
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.project-links a {
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: white;
+  background-color: #24292e;
+  border: 1px solid transparent;
+  transition: background 0.2s ease;
+}
+
+.project-links a:hover {
+  background-color: black;
 }
 
 @media (max-width: 992px) {
@@ -771,18 +839,22 @@ main,
   }
 
   .project-card {
+    display: flex;
     flex-direction: column;
-    padding: 1rem;
-    align-items: flex-start;
-    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 20rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 
   .project-image {
     width: 100%;
-    height: auto;
-    max-height: 160px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 8px;
+    display: block;
+    border-radius: 0; /* ไม่มีมุมมน */
   }
 }
 
@@ -790,73 +862,25 @@ main,
   .project-cards {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    width: 100%;
+    gap: 1.5rem;
   }
   .project-card {
+    display: flex;
     flex-direction: column;
-    padding: 1rem;
-    align-items: flex-start;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 20rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   .project-image {
     width: 100%;
-    height: auto;
-    max-height: 150px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 8px;
+    display: block;
+    border-radius: 0; /* ไม่มีมุมมน */
   }
-}
-
-.project-image {
-  width: 100%;
-  height: 180px;
-  border-radius: var(--radius-lg);
-}
-
-.project-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 0;
-}
-
-.project-tags span {
-  background-color: #333;
-  border-radius: var(--radius-sm);
-  padding: 0.3rem 0.6rem;
-  font-size: 0.85rem;
-  color: var(--text-light);
-}
-
-.project-links {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.project-links a {
-  text-decoration: none;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: white;
-  border: 1px solid white;
-  border-radius: 6px;
-  background-color: #24292e;
 }
 
 .project-links a:hover {
@@ -1039,9 +1063,9 @@ main,
 }
 
 .experience-section {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 8rem;
+  padding: 6rem 1.5rem;
 }
 
 .experience-header {
@@ -1050,81 +1074,97 @@ main,
 }
 
 .experience-header h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
+  color: #ffffff;
   margin-bottom: 0.5rem;
-  color: #fff;
 }
 
 .experience-header p {
   font-size: 1rem;
-  color: #aaa;
+  color: #bbb;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
+/* --- Cards Container --- */
 .experience-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  max-width: 600px;
 }
 
+/* --- Card --- */
 .experience-card {
-  /* background: rgba(255, 255, 255, 0.05);*/
-  padding: 1rem;
+  margin-top: 2rem;
+  background: #1e1e1e;
   border-radius: 1rem;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  background-color: #1a1a1a;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.experience-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #333;
+}
+
+/* --- Content --- */
 .experience-card h3 {
-  margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #fff;
+  padding: 1rem 1rem 0.2rem;
 }
 
-.experience-card span.date {
-  font-size: 0.85rem;
-  color: #bbb;
+.experience-card h3 span {
   display: block;
-  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+.experience-card .date {
+  font-size: 0.85rem;
+  color: #888;
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .experience-card p {
   font-size: 0.95rem;
   color: #ccc;
-  margin: 0.8rem 0;
+  padding: 0 1rem 1rem;
   line-height: 1.6;
 }
 
+/* --- Tool Tags --- */
 .experience-card .tools {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.5rem;
+  padding: 0 1rem 1.5rem;
 }
 
 .experience-card .tools span {
-  background-color: #7c3aed;
-  color: white;
   font-size: 0.75rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  background: #2a2a2a;
+  color: #eee;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
 }
 
-.experience-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  max-height: 200px;
-}
-
+/* --- Summary --- */
 .experience-summary {
   margin-top: 4rem;
-  padding: 2rem;
-  /* background: rgba(255, 255, 255, 0.05); */
-  background-color: #1a1a1a;
-  border-radius: 12px;
+  background: #1a1a1a;
   border-left: 5px solid #7c3aed;
+  border-radius: 12px;
+  padding: 2rem;
 }
 
 .experience-summary h2 {
@@ -1134,7 +1174,6 @@ main,
 }
 
 .experience-summary ul {
-  list-style: disc;
   padding-left: 1.5rem;
 }
 
@@ -1147,28 +1186,71 @@ main,
 /* Responsive */
 @media (max-width: 768px) {
   .experience-card {
-    padding: 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    margin: 4rem;
+    background: #1e1e1e;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .experience-card h3 {
-    font-size: 1.1rem;
+  .experience-image-wrapper {
+    width: 100%;
+    height: 180px;
+    flex-shrink: 0;
+  }
+
+  .experience-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid #333;
+  }
+
+  .experience-details {
+    text-align: left;
   }
 
   .experience-header h1 {
     font-size: 2rem;
+    text-align: center;
+  }
+
+  .experience-header p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .experience-summary {
+    margin: 4rem;
+    background: #1a1a1a;
+    border-left: 5px solid #7c3aed;
+    border-radius: 12px;
+    padding: 2rem;
   }
 
   .experience-summary h2 {
     font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
-  .experience-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    max-height: 200px;
+  .experience-summary ul {
+    padding-left: 1.2rem;
+  }
+
+  .tools {
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tools span {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
   }
 }
 
