@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="image/favicon.ico">
     <meta name="description" content="Frontend Developer Portfolio of Chuthamat Buaban.">
     <meta name="keywords" content="Frontend, React, Portfolio, Developer, HTML, CSS, JavaScript">
     <meta name="author" content="Chuthamat Buaban">
@@ -201,7 +200,8 @@
                                 <li>
                                     <p>การพัฒนาระบบวิเคราะห์ ประมวลผล และแสดงผลข้อมูลในอาคารอัจฉริยะ
                                         สำหรับการบริหารจัดในยุคที่การใช้พลังงานในอาคารเพิ่มสูงขึ้นอย่างต่อเนื่อง
-                                        การบริหารจัดการพลังงานอย่างมีประสิทธิภาพจึงเป็นปัจจัยสำคัญในการลดการใช้พลังงานที่ไม่จำเป็นและเพิ่มประสิทธิภาพการดำเนินงาน
+                                        การบริหารจัดการพลังงานอย่างมีประสิทธิภาพจึงเป็นปัจจัยสำคัญในการลด<br>
+                                        การใช้พลังงานที่ไม่จำเป็นและเพิ่มประสิทธิภาพการดำเนินงาน
                                         งานวิจัยนี้นำเสนอระบบบริหารจัดการพลังงานอัจฉริยะโดยใช้เทคโนโลยี
                                         อินเทอร์เน็ตของสรรพสิ่ง (IoT) และปัญญาประดิษฐ์ (AI)
                                         เพื่อสนับสนุนการวิเคราะห์ ประมวลผล และแสดงผลข้อมูลพลังงานในอาคารแบบเรียลไทม์
@@ -359,7 +359,7 @@
                             <p>Feel free to reach out for collaborations or inquiries.</p>
                         </div>
                         <div class="content-contact-form">
-                            <form action="https://formspree.io/f/xrblbnpa" method="POST">
+                            <form id="contactForm" action="https://formspree.io/f/xrblbnpa" method="POST">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" id="name" placeholder="Your Name"><br>
 
@@ -374,14 +374,27 @@
                                     <button type="reset">Reset</button>
                                     <button type="submit" id="submit">Send Message</button>
                                 </div>
-
-                                <script>
-                                    let submit = document.getElementById("submit")
-                                    submit.addEventListener("click", function () {
-                                        alert("Successfully")
-                                    })
-                                </script>
                             </form>
+
+                            <script>
+                                const form = document.getElementById("contactForm");
+
+                                form.addEventListener("submit", function (e) {
+                                    const name = document.getElementById("name").value.trim();
+                                    const email = document.getElementById("email").value.trim();
+                                    const message = document.getElementById("message").value.trim();
+
+                                    if (!name || !email || !message) {
+                                        e.preventDefault(); // หยุดการส่งฟอร์ม
+                                        alert("⚠️ กรุณากรอกข้อมูลให้ครบก่อนส่ง");
+                                        return;
+                                    }
+
+                                    // ถ้าผ่านการตรวจสอบ
+                                    alert("✅ ส่งข้อความสำเร็จ!");
+                                });
+                            </script>
+
                         </div>
                     </div>
                 </section>
@@ -400,7 +413,6 @@
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
-                <p><a href="privacy-policy.html">Privacy Policy</a></p>
             </footer>
         </div>
 
