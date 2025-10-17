@@ -791,7 +791,7 @@ main {
 .project-cards {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 0.5rem;
   flex-wrap: nowrap;
   justify-content: center;
 }
@@ -802,7 +802,7 @@ main {
   background-color: #1a1a1a;
   border-radius: 12px;
   overflow: hidden;
-  width: 20rem;
+  width: 25rem;
   transition: transform 0.3s ease;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding-bottom: 3.5rem;
@@ -821,7 +821,7 @@ main {
 
 .project-details {
   flex: 1;
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -859,17 +859,14 @@ main {
 .project-links {
   position: absolute;
   bottom: 1rem;
-  left: 1.5rem;
-  right: 1.5rem;
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
   justify-content: flex-start;
+  gap: 0.5rem;
 }
 
 .project-links a {
   text-decoration: none;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0.8rem;
   font-size: 0.85rem;
   font-weight: 500;
   border-radius: 6px;
@@ -975,7 +972,6 @@ main {
 .btn-link.github {
   background-color: #24292e;
   color: white;
-  width: 110px;
 }
 
 /* -------------------------------------------------- */
@@ -994,18 +990,10 @@ main {
 .btn-link.details {
   background-color: #7c3aed;
   color: white;
-  width: 100px;
-}
-.btn-link.details:hover {
-  background-color: #5b21b6;
 }
 
-@media (max-width: 600px) {
-  .project-links {
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 7rem;
-  }
+.btn-link.details:hover {
+  background-color: #5b21b6;
 }
 
 /* Modal */
